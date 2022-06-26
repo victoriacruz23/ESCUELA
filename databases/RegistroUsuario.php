@@ -16,7 +16,7 @@ if($busqueda->num_rows > 0){
     }
     if($password == $password1){
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-     $insertar = $conexion -> query("INSERT INTO usuario(UsuarioRollId,UsuarioNickName,UsuarioPassword)
+     $insertar = $conexion -> query("INSERT INTO usuario(UsuarioRolId,UsuarioNickName,UsuarioPassword)
                  values ('2','$nickname','$password_hash')");
 
         if($insertar){

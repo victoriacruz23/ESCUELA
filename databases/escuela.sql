@@ -6,8 +6,10 @@ CREATE TABLE rol(
 );
 CREATE TABLE usuario(
     UsuarioId INT PRIMARY KEY AUTO_INCREMENT,
-    UsuarioRollId INT,
+    UsuarioRolId INT,
     UsuarioNickName varchar(50) NOT NULL,
     UsuarioPassword varchar(80) NOT NULL,
     FOREIGN KEY rol (UsuarioRollId) REFERENCES rol (RolId)
 );
+
+SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId; 

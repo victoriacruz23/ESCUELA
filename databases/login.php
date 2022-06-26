@@ -9,7 +9,7 @@ $consulta = $conexion->query("SELECT * FROM usuario WHERE UsuarioNickName = '$us
 if($consulta->num_rows == 1){
     while($info = $consulta->fetch_assoc()){
         $pass =  $info['UsuarioPassword'];
-        $rol = $info['UsuarioRollId'];
+        $rol = $info['UsuarioRolId'];
     }
     // password_verify(Contreaseña sin hash, contraseña con hash)
     if (password_verify($contra, $pass)) {
