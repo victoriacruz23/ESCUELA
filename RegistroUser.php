@@ -11,8 +11,6 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
-
     <body style="background: linear-gradient(to right, #b0f2c2  ,#ffe4e1);">
         <!-- contenedor principal -->
         <div class="container">
@@ -35,7 +33,7 @@
 
                         </div>
                         <center>
-                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                            <button type="submit" class="btn btn-primary">Registrar</button>
                         </center>
                     </form>
                     <!-- crear cuenta -->
