@@ -1,9 +1,11 @@
 <?php
 require_once ("conexion.php");
-// print_r($_POST);
+//print_r($_POST);
 $nickname = $_POST["usuario"];
 $password = $_POST["password"];
 $password1 = $_POST["verifica"];
+
+//exit;
 
 $busqueda = $conexion-> query("SELECT * FROM usuario WHERE UsuarioNickname = '$nickname'");
 if($busqueda->num_rows > 0){
@@ -16,9 +18,14 @@ if($busqueda->num_rows > 0){
     }
     if($password == $password1){
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-     $insertar = $conexion -> query("INSERT INTO usuario(UsuarioRolId,UsuarioNickName,UsuarioPassword)
-                 values ('2','$nickname','$password_hash')");
-
+    if (!empty($_POST["select"])) {
+        $rol=$_POST["select"];
+        $insertar = $conexion -> query("INSERT INTO usuario(UsuarioRolId,UsuarioNickName,UsuarioPassword)
+                         values ($rol,'$nickname','$password_hash')");
+        }else{
+        $insertar = $conexion -> query("INSERT INTO usuario(UsuarioRolId,UsuarioNickName,UsuarioPassword)
+                         values ('2','$nickname','$password_hash')");
+        }
         if($insertar){
         echo "
         <script>

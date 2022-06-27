@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-sm-6 col-md-6" style="margin-top:10%;">
-                <form action="databases/RegistroUsuario.php" method="POST">
+                <form action="../databases/RegistroUsuario.php" method="POST">
                     <div class="mb-3">
                         <label for="usuario" class="form-label">Nickname</label>
                         <input type="text" class="form-control" name="usuario" id="usuario" required>
@@ -35,8 +35,8 @@
 
                     </div>
                     <div class="mb-3">
-                        <label for="verifica" class="form-label">Tipos de rol</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <label for="select" class="form-label">Tipos de rol</label>
+                        <select class="form-select" name="select" id="select" aria-label="Default select example" required>
                             <option selected>Seleccionar un rol</option>
                             <!-- consulta -->
                             <?php
