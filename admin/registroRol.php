@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-sm-6 col-md-6" style="margin-top: 5%;">
-                <form action="../admin/registrodeRol.php" method="POST">
+                <form action="../databases/RegistrodeRol.php" method="POST">
                     <div class="mb-3">
                         <label for="rol" class="form-label">Nombre del Rol</label>
                         <input type="text" class="form-control" name="rol" id="rol" required>

@@ -25,6 +25,7 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Tipo de Rol</th>
+                            <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody class="table-primary">
@@ -37,6 +38,9 @@
                         <tr>
                             <th scope="row"><?php echo $t["RolId"]; ?></th>
                             <td><?php echo $t["RolNombre"]; ?></td>
+                            <div style="justify-content: center;">
+                                <td><a href="../databases/EliminarRol.php?eliminar=<?php echo $t['RolId']; ?>" class="btn btn-danger">Eliminar</a></td>
+                            </div>
                         </tr>
                 <?php  
                       }
