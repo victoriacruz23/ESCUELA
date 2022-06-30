@@ -20,8 +20,6 @@
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-6" style="margin-top:10%;">
-
-
                 <table class="table table-striped table-hover">
                     <thead class="table-dark">
                         <tr>

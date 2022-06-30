@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usario</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <header>
     <?php
@@ -16,7 +15,7 @@
     ?>
 </header>
 
-<body style="background: linear-gradient(to right, #b0f2c2  ,#ffe4e1);">>
+<body style="background: linear-gradient(to right, #b0f2c2  ,#ffe4e1);">
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-sm-6 col-md-6" style="margin-top:10%;">
@@ -41,29 +40,31 @@
                             <!-- consulta -->
                             <?php
                             require_once("../databases/conexion.php");
-                            $roles = $conexion -> query("SELECT * FROM rol");
-                            if($roles->num_rows > 0){
-                                while($t=$roles->fetch_assoc()){
+                            $roles = $conexion->query("SELECT * FROM rol");
+                            if ($roles->num_rows > 0) {
+                                while ($t = $roles->fetch_assoc()) {
                             ?>
-                            
-                            <option value="<?php echo $t["RolId"] ?>"><?php echo $t["RolNombre"]?></option>
-                             
-                             <?php
-                                }}
-                             ?>
+
+                                    <option value="<?php echo $t["RolId"] ?>"><?php echo $t["RolNombre"] ?></option>
+
+                            <?php
+                                }
+                            }
+                            ?>
                         </select>
                     </div>
                     <center>
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+        
+                        <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
+                        <button type="submit" style="margin-left: 5%" class="btn btn-success">Cancelar</button>
                     </center>
                 </form>
 
             </div>
         </div>
     </div>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+   <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
 </body>
 

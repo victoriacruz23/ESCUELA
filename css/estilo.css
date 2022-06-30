@@ -1,0 +1,8 @@
+div{
+    width: 100%;
+height: 400px;
+background-image: url('https://thumbs.dreamstime.com/b/programming-web-banner-best-programming-languages-technology-process-software-development-programming-web-banner-157281592.jpg');
+background-repeat: no-repeat;
+background-size: contain;
+border: 1px solid red;
+}

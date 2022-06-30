@@ -19,39 +19,40 @@
 <body>
     <div class="container">
         <div class="row" style="justify-content: center;">
-            <div class="col-5" style="margin-top:10%;">
+            <div class="col-5" style="margin-top:3%;">
 
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Tipo de Rol</th>
+                                <th scope="col">Nombre de usuario</th>
 
-                <table class="table table-striped table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Tipo de Rol</th>
-                            <th scope="col">Nombre de usuario</th>
-
-                        </tr>
-                    </thead>
-                    <tbody class="table-primary">
-                        <?php
+                            </tr>
+                        </thead>
+                        <tbody class="table-primary">
+                            <?php
                     require_once("../databases/conexion.php");
                     $usuario = $conexion -> query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId");
                     if($usuario->num_rows > 0){
                         while($cons=$usuario->fetch_assoc()){
                 ?>
-                        <tr>
-                            <th scope="row"><?php echo $cons["UsuarioId"]; ?></th>
-                            <td><?php echo $cons["RolNombre"]; ?></td>
-                            <td><?php echo $cons["UsuarioNickName"]; ?> </td>
-                        </tr>
-                        <?php  
+                            <tr>
+                                <th scope="row"><?php echo $cons["UsuarioId"]; ?></th>
+                                <td><?php echo $cons["RolNombre"]; ?></td>
+                                <td><?php echo $cons["UsuarioNickName"]; ?> </td>
+                            </tr>
+                            <?php  
                       }
                     }else{
                         echo "No existen usuarios";
                     }
                     ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
