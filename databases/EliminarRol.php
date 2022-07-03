@@ -4,7 +4,7 @@ require_once("conexion.php");
 $eliminar = $_GET["eliminar"];
 
 $delete = $conexion->query ("DELETE FROM rol WHERE RolId= $eliminar");
-if($delete){
+if($delete){   
     echo "
     <script> 
     alert('El rol se elimino corectamente');

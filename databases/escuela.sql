@@ -9,7 +9,7 @@ CREATE TABLE usuario(
     UsuarioRolId INT,
     UsuarioNickName varchar(50) NOT NULL,
     UsuarioPassword varchar(80) NOT NULL,
-    FOREIGN KEY rol (UsuarioRollId) REFERENCES rol (RolId)
+    FOREIGN KEY rol (UsuarioRolId) REFERENCES rol (RolId)
 );
 
 -- SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId; 
@@ -25,4 +25,5 @@ create table alumno(
     Telefono char (10),
     Dni char (25)
     );
+
 
