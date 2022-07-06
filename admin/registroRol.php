@@ -47,7 +47,6 @@ if(isset($_SESSION["usuario"])){
                     <center>
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </center>
-                   
                 </form>
             </div>
         </div>

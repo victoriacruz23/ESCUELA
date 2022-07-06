@@ -15,11 +15,10 @@
 
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Menú
+            Configuración
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item text-primary" href="#">Configuración</a></li>
             <li style="text-transform: uppercase;"><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg"
                   width="16" height="16" fill="currentColor" class="bi bi-wrench-adjustable-circle" viewBox="0 0 16 16">
                   <path d="M12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z" />
@@ -42,21 +41,33 @@
             <li><a class="dropdown-item text-primary" href="registrodeusuario.php">Registro de usuario</a></li>
             <li><a class="dropdown-item text-primary" href="consultaUsuario.php">Consulta de usuarios</a></li>
             <li><a class="dropdown-item text-primary" href="eliminarusuario.php">Eliminar usuario</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            <!-- <li style="text-transform: uppercase;"><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 16 16">
+                  <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                  <path
+                    d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z" />
+                </svg> Catálogo </a></li>
+            <li><a class="dropdown-item text-primary" href="registroalumno.php">Registro de alumno</a></li>
+            <li><a class="dropdown-item text-primary" href="consultaUsuario.php">Consulta de usuarios</a></li>
+            <li><a class="dropdown-item text-primary" href="eliminaralumnos.php">Eliminar alumno</a></li> -->
+
+          </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">Catálogo</a>
+          <ul class="dropdown-menu">
             <li style="text-transform: uppercase;"><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg"
                   width="16" height="16" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 16 16">
                   <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                   <path
                     d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z" />
                 </svg> Catálogo </a></li>
-                <li><a class="dropdown-item text-primary" href="registroalumno.php">Registro de alumno</a></li>
+            <li><a class="dropdown-item text-primary" href="registroalumno.php">Registro de alumno</a></li>
             <li><a class="dropdown-item text-primary" href="consultaUsuario.php">Consulta de usuarios</a></li>
             <li><a class="dropdown-item text-primary" href="eliminaralumnos.php">Eliminar alumno</a></li>
-            <li>
           </ul>
         </li>
+
 
         <!-- boton -->
         <li class="nav-item">
