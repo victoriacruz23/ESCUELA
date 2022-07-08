@@ -15,17 +15,20 @@ if(isset($_SESSION["usuario"])){
     // si la sesion no existe se dirige al index
  header("Location:../index.php ");  
 }
-
 ?>
+
+</header>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio Admin</title>
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <header>
     <?php
@@ -33,15 +36,19 @@ if(isset($_SESSION["usuario"])){
     ?>
 </header>
 <style>
-    body{
+    body {
         height: 100%;
-    background-repeat: no-repeat;
-    background: url(https://thumbs.dreamstime.com/b/programming-web-banner-best-programming-languages-technology-process-software-development-programming-web-banner-157281592.jpg) no-repeat center center fixed;
-    background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background: url(https://thumbs.dreamstime.com/b/programming-web-banner-best-programming-languages-technology-process-software-development-programming-web-banner-157281592.jpg) no-repeat center center fixed;
+        background-size: 100% 100%;
     }
 </style>
+
 <body>
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

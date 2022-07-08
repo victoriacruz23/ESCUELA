@@ -26,7 +26,8 @@ if(isset($_SESSION["usuario"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Alumnos</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <header>
     <?php
@@ -37,43 +38,48 @@ if(isset($_SESSION["usuario"])){
 <body style="background: linear-gradient(to right, #b0f2c2  ,#ffe4e1);">
     <div class="container">
         <div class="row" style="justify-content: center;">
-            <div class="col-sm-6 col-md-6" style="margin-top:10%;">
-                <form action="../databases/RegistroUsuario.php" method="POST">
+            <div class="col-sm-6 col-md-6" style="margin-top:5%;">
+                <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/RegistroUsuario.php" method="POST">
                     <div class="mb-3">
-                        <label for="usuario" class="form-label">Nombre del alumno</label>
-                        <input type="text" class="form-control" name="usuario" id="usuario" required>
+                        <label for="alumno" class="form-label">Nombre del alumno</label>
+                        <input type="text" class="form-control border border-primary" name="alumno" id="alumno" placeholder="Nombre del alumno" required > 
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="password" id="password" required>
+                        <label for="apellidoP" class="form-label">Apellido Paterno</label>
+                        <input type="text" class="form-control border border-primary" name="apellidoP" id="apellidoP" placeholder="hola" required > 
                     </div>
                     <div class="mb-3">
-                        <label for="verifica" class="form-label">Verificacion de Contraseña</label>
-                        <input type="password" class="form-control" name="verifica" id="verifica" required>
+                        <label for="apellidoM" class="form-label">Apellido Materno</label>
+                        <input type="text" class="form-control border border-primary" name="apellidoM" id="apellidoM" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label"> Direccion</label>
+                        <input type="text" class="form-control border border-primary" name="direccion" id="direccion" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="Poblacion" class="form-label">Poblacion</label>
+                        <input type="text" class="form-control border border-primary" name="Poblacion" id="Poblacion" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="Fecha" class="form-label">Fecha de Nacimiento</label>
+                        <input type="text" class="form-control border border-primary" name="Fecha" id="Fecha" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="Codigo" class="form-label">Codigo Postal</label>
+                        <input type="text" class="form-control border border-primary" name="Codigo" id="Codigo" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="Telefono" class="form-label">Telefono</label>
+                        <input type="text" class="form-control border border-primary" name="Telefono" id="Telefono" placeholder="hola" required > 
+                    </div>
+                    <div class="mb-3">
+                        <label for="Dni" class="form-label">Dni</label>
+                        <input type="text" class="form-control border border-primary" name="Dni" id="Dni" placeholder="hola" required > 
+                    </div>
 
-                    </div>
-                    <div class="mb-3">
-                        <label for="select" class="form-label">Tipos de rol</label>
-                        <select class="form-select" name="select" id="select" aria-label="Default select example" required>
-                            <option selected>Seleccionar un rol</option>
-                            <!-- consulta -->
-                            <?php
-                            require_once("../databases/conexion.php");
-                            $roles = $conexion->query("SELECT * FROM rol");
-                            if ($roles->num_rows > 0) {
-                                while ($t = $roles->fetch_assoc()) {
-                            ?>
 
-                                    <option value="<?php echo $t["RolId"] ?>"><?php echo $t["RolNombre"] ?></option>
-
-                            <?php
-                                }
-                            }
-                            ?>
-                        </select>
-                    </div>
                     <center>
-        
+
                         <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
                         <button type="submit" style="margin-left: 5%" class="btn btn-success">Cancelar</button>
                     </center>
@@ -82,8 +88,9 @@ if(isset($_SESSION["usuario"])){
             </div>
         </div>
     </div>
-   <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
 </body>
 

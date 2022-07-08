@@ -21,14 +21,18 @@ if($consulta->num_rows == 1){
         session_start();
         $_SESSION["usuario"] = $datoSession;
         echo "<script>
-        alert ('Bienvenido al sistema');
+        alert ('Acceso correcto !Conexión Exitosa!');
+        
+
         if($rol == 1){
             window.location = '../admin/index.php';
            }else if($rol == 2){
             window.location = '../user/index.php';
            }
+
         </script>";
         exit;
+   
     }else{
         echo "
         <script>
