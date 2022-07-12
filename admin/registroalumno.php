@@ -39,42 +39,47 @@ if(isset($_SESSION["usuario"])){
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-sm-6 col-md-6" style="margin-top:5%;">
-                <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/RegistroUsuario.php" method="POST">
+                <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;"
+                    action="../databases/RegistroAlumno.php" method="POST">
                     <div class="mb-3">
                         <label for="alumno" class="form-label">Nombre del alumno</label>
-                        <input type="text" class="form-control border border-primary" name="alumno" id="alumno" placeholder="Nombre del alumno" required > 
+                        <input type="text" class="form-control border border-primary" name="alumno" id="alumno"
+                            placeholder="Nombre del alumno" required>
                     </div>
                     <div class="mb-3">
-                        <label for="apellidoP" class="form-label">Apellido Paterno</label>
-                        <input type="text" class="form-control border border-primary" name="apellidoP" id="apellidoP" placeholder="hola" required > 
-                    </div>
-                    <div class="mb-3">
-                        <label for="apellidoM" class="form-label">Apellido Materno</label>
-                        <input type="text" class="form-control border border-primary" name="apellidoM" id="apellidoM" placeholder="hola" required > 
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" style=" border-color: rgb(120, 128, 214);"
+                            name="apellidos" id="apellidos" placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="direccion" class="form-label"> Direccion</label>
-                        <input type="text" class="form-control border border-primary" name="direccion" id="direccion" placeholder="hola" required > 
+                        <input type="text" class="form-control border border-primary" name="direccion" id="direccion"
+                            placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="Poblacion" class="form-label">Poblacion</label>
-                        <input type="text" class="form-control border border-primary" name="Poblacion" id="Poblacion" placeholder="hola" required > 
+                        <input type="text" class="form-control border border-primary" name="Poblacion" id="Poblacion"
+                            placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="Fecha" class="form-label">Fecha de Nacimiento</label>
-                        <input type="text" class="form-control border border-primary" name="Fecha" id="Fecha" placeholder="hola" required > 
+                        <input type="date" class="form-control border border-primary" name="Fecha" id="Fecha"
+                            placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="Codigo" class="form-label">Codigo Postal</label>
-                        <input type="text" class="form-control border border-primary" name="Codigo" id="Codigo" placeholder="hola" required > 
+                        <input type="number" class="form-control border border-primary" name="Codigo" id="Codigo"
+                            placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="Telefono" class="form-label">Telefono</label>
-                        <input type="text" class="form-control border border-primary" name="Telefono" id="Telefono" placeholder="hola" required > 
+                        <input type="number" class="form-control border border-primary" name="Telefono" id="Telefono"
+                            placeholder="hola" required>
                     </div>
                     <div class="mb-3">
                         <label for="Dni" class="form-label">Dni</label>
-                        <input type="text" class="form-control border border-primary" name="Dni" id="Dni" placeholder="hola" required > 
+                        <input type="number" class="form-control " style=" border-color: rgb(120, 128, 214);" name="Dni"
+                            id="Dni" placeholder="hola" required>
                     </div>
 
 

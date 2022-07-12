@@ -3,7 +3,7 @@ require_once("conexion.php");
 //print_r($_GET);
 $alumno = $_GET["eliminar"];
 
-$alumno = $conexion->query ("DELETE FROM usuario WHERE UsuarioId= $alumno");
+$alumno = $conexion->query ("DELETE FROM alumno WHERE  Dni_Alum= $alumno");
 if($alumno){   
     echo "
     <script> 
