@@ -41,6 +41,12 @@ if(isset($_SESSION["usuario"])){
             <div class="col-8" style="margin-top:3%;">
 
                 <div class="table-responsive">
+                    <nav class="navbar navbar-light bg-light">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
                     <table class="table table-striped table-hover">
                         <thead class="table-dark">
                             <tr>
@@ -93,7 +99,7 @@ if(isset($_SESSION["usuario"])){
                                 </svg>
                             </a>
                         </center>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
