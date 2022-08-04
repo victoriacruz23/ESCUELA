@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 // evaluamos si ela variable sesion existe
 if(isset($_SESSION["usuario"])){
@@ -39,7 +39,7 @@ if(isset($_SESSION["usuario"])){
     body {
         height: 100%;
         background-repeat: no-repeat;
-        background: url(https://thumbs.dreamstime.com/b/programming-web-banner-best-programming-languages-technology-process-software-development-programming-web-banner-157281592.jpg) no-repeat center center fixed;
+        background: url(https://www.greatschools.org/gk/wp-content/uploads/2020/08/BTS-soical-distancing-high-school-Spanish.jpg) no-repeat center center fixed;
         background-size: 100% 100%;
     }
 </style>
