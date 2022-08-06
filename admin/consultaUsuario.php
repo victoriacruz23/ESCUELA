@@ -27,6 +27,9 @@ if (isset($_SESSION["usuario"])) {
     <title>Consulta Usuario</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../sweetalert/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 </head>
 <header>
     <?php
@@ -37,15 +40,9 @@ if (isset($_SESSION["usuario"])) {
 <body>
     <div class="container">
         <div class="row" style="justify-content: center;">
-            <div class="col-5" style="margin-top:3%;">
-                <nav class="navbar navbar-light bg-light justify-content-between">
-                    <form class="form-inline" action="consultaUsuario.php" method="POST">
-                        <input class="form-control mr-sm-4" type="search" name="search" id="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </nav>
+            <div class="col-8" style="margin-top:3%;">
                 <div class="table-responsive">
-                    <table class="table table-striped table-hover">
+                    <table id="example" class="table table-striped table-hover" style="width:100%">
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">Id</th>
@@ -57,13 +54,7 @@ if (isset($_SESSION["usuario"])) {
                         <tbody class="table-primary">
                             <?php
                             require_once("../databases/conexion.php");
-                            if (!empty($_POST['search'])) {
-                                $dato =  $_POST['search'];
-                                // echo $dato;
-                                $usuario = $conexion->query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId WHERE UsuarioNickName LIKE '%".$dato."%'");
-                            } else {
-                                $usuario = $conexion->query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId");
-                            }
+                            $usuario = $conexion->query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId");
                             if ($usuario->num_rows > 0) {
                                 while ($cons = $usuario->fetch_assoc()) {
                             ?>
@@ -78,8 +69,12 @@ if (isset($_SESSION["usuario"])) {
                                 echo "No existen usuarios";
                             }
                             ?>
-
                         </tbody>
+                        <tfoot class="table-dark">
+                            <th scope="col">Id</th>
+                            <th scope="col">Tipo de Rol</th>
+                            <th scope="col">Nombre de usuario</th>
+                        </tfoot>
                     </table>
                     <div class="mt-4">
                         <center>
@@ -99,6 +94,19 @@ if (isset($_SESSION["usuario"])) {
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <script src="../sweetalert/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/es-MX.json'
+                }
+            });
+        });
     </script>
 </body>
 

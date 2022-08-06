@@ -25,6 +25,7 @@ if(isset($_SESSION["usuario"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Alumnos</title>
+    <link rel="stylesheet" href="../sweetalert/dist/sweetalert2.min.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -43,12 +44,11 @@ if(isset($_SESSION["usuario"])){
                     action="../databases/RegistroAlumno.php" method="POST">
                     <div class="mb-3">
                         <label for="alumno" class="form-label">Nombre del alumno</label>
-                        <input type="text" class="form-control border border-primary" name="alumno" id="alumno"
-                            placeholder="Nombre del alumno" required>
+                        <input type="text" class="form-control border border-primary text-capitalize" name="alumno" id="alumno" placeholder="Nombre del alumno" required>
                     </div>
                     <div class="mb-3">
                         <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" style=" border-color: rgb(120, 128, 214);"
+                        <input type="text" class="form-control border border-primary text-capitalize" style=" border-color: rgb(120, 128, 214);"
                             name="apellidos" id="apellidos" placeholder="hola" required>
                     </div>
                     <div class="mb-3">
@@ -77,14 +77,11 @@ if(isset($_SESSION["usuario"])){
                             placeholder="hola" required>
                     </div>
                     <div class="mb-3">
-                        <label for="Dni" class="form-label">Dni</label>
-                        <input type="number" class="form-control " style=" border-color: rgb(120, 128, 214);" name="Dni"
-                            id="Dni" placeholder="hola" required>
+                        <label for="Dni" class="form-label">Curp</label>
+                        <input type="text" class="form-control border border-primary" style=" border-color: rgb(120, 128, 214);" name="Dni"
+                            id="Dni"  placeholder="hola" required onkeyup="this.value=this.value.toUpperCase()"> 
                     </div>
-
-
                     <center>
-
                         <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
                         <button type="submit" style="margin-left: 5%" class="btn btn-success">Cancelar</button>
                     </center>
@@ -114,6 +111,7 @@ if(isset($_SESSION["usuario"])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
+    <script src="../sweetalert/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
