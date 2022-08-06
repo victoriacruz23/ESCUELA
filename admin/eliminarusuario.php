@@ -50,6 +50,7 @@ if(isset($_SESSION["usuario"])){
 
                             </tr>
                         </thead>
+            
                         <tbody class="table-primary">
                             <?php
                     require_once("../databases/conexion.php");
@@ -62,8 +63,9 @@ if(isset($_SESSION["usuario"])){
                                 <td><?php echo $cons["RolNombre"]; ?></td>
                                 <td><?php echo $cons["UsuarioNickName"]; ?> </td>
                                 <div style="justify-content: center;">
-                                    <td><a href="../databases/EliminarUsuario.php?eliminar=<?php echo $cons['UsuarioId']; ?>"
-                                            class="btn btn-danger">Eliminar</a></td>
+                                    <td><a onclick="preguntar(<?php echo $cons['UsuarioId']?>)" 
+                                 class="btn btn-danger">Eliminar</a></td>
+             
                                 </div>
                             </tr>
                             <?php  
@@ -79,6 +81,17 @@ if(isset($_SESSION["usuario"])){
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+            function preguntar(id)
+            {
+                if(confirm('¿Estás seguro que deseas borrar?'))
+                {
+                    console.log(id);
+                    window.location.href = "../databases/EliminarUsuario.php?eliminar="+id;
+                    return false;
+                }
+            }
+        </script>
     <div class="mt-4">
     <center>
         <a style="margin-right: 20px;" href="consultaUsuario.php" class="text-dark"> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
