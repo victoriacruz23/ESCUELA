@@ -40,7 +40,7 @@ if(isset($_SESSION["usuario"])){
     body {
         height: 100%;
         background-repeat: no-repeat;
-        background: url(https://www.greatschools.org/gk/wp-content/uploads/2020/08/BTS-soical-distancing-high-school-Spanish.jpg) no-repeat center center fixed;
+        background: url(https://designthinking.gal/wp-content/uploads/2017/05/personas.jpg) no-repeat center center fixed;
         background-size: 100% 100%;
     }
 </style>

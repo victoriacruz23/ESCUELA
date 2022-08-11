@@ -37,7 +37,7 @@ if (isset($_SESSION["usuario"])) {
     ?>
 </header>
 
-<body>
+<body style="background: linear-gradient(to right,#5695EC ,#3BEEAF);">
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-10" style="margin-top:3%;">
