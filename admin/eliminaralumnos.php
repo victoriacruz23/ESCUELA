@@ -40,7 +40,7 @@ if (isset($_SESSION["usuario"])) {
 <body style="background: linear-gradient(to right,#5695EC ,#3BEEAF);">
     <div class="container">
         <div class="row" style="justify-content: center;">
-            <div class="col-10" style="margin-top:3%;">
+            <div class="col-12" style="margin-top:3%;">
                 <div class="table-responsive">
                     <table id="example" class="table table-striped table-hover" style="width:100%">
                         <thead class="table-dark">
@@ -72,7 +72,7 @@ if (isset($_SESSION["usuario"])) {
                                         <td><?php echo $cons["F_Nacimiento"]; ?> </td>
                                         <td><?php echo $cons["Dni"]; ?> </td>
                                         <div style="justify-content: center;">
-                                            <td><a onclick=eliminarAlumno(<?php echo $cons['Dni_Alum']; ?>,"<?php echo $cons['Nombre']; ?>") class="text-dark text-center btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <td><a onclick=editarAlumno(<?php echo $cons['Dni_Alum']; ?>,"<?php echo $cons['Nombre']; ?>") class="text-dark text-center btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                                     </svg></a></td>
@@ -149,6 +149,24 @@ if (isset($_SESSION["usuario"])) {
             }).then((result) => {
                 if (result.isConfirmed) {
                   window.location.href = "../databases/EliminarAlumnos.php?eliminar="+eliminar
+                // console.log(eliminar);
+                }
+            })
+        }
+        function editarAlumno(eliminar,usuario) {
+            Swal.fire({
+                title: `¿Desea editar el Alumno ${usuario}?`,
+                text: "Esto podria generar problemas en el sistema",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Editar',
+                cancelButtonText:'Cancelar',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.href = "../databases/editarAlumnos.php?eliminar="+eliminar
                 // console.log(eliminar);
                 }
             })

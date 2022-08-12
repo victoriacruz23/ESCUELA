@@ -144,6 +144,24 @@ if (isset($_SESSION["usuario"])) {
                 }
             })
         }
+        function editarUsuario(eliminar,usuario) {
+            Swal.fire({
+                title: `¿Desea editar el Usuario ${usuario}?`,
+                text: "Esto podria generar problemas en el sistema",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Editar',
+                cancelButtonText:'Cancelar',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.href = "../databases/editarUsuario.php?eliminar="+eliminar
+                // console.log(eliminar);
+                }
+            })
+        }
     </script>
 </body>
 
