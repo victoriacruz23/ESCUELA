@@ -8,7 +8,7 @@ if($roles->num_rows>0){
     echo "
     <script> 
     alert('Ese rol ya existente');
-    window.location = '../admin/registroRol.php';
+    window.location = '../admin/consultaRol.php';
     </script>";
     exit;
 }else{
@@ -17,14 +17,14 @@ if($insert){
     echo "
     <script> 
     alert('Se registro correctamente');
-    window.location = '../admin/registroRol.php';
+    window.location = '../admin/consultaRol.php';
     </script>";
     exit;
 }else{
     echo "
     <script> 
     alert('Error al insertar');
-    window.location = '../admin/registroRol.php';
+    window.location = '../admin/consultaRol.php';
     </script>";
     exit;
 }
