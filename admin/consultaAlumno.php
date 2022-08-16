@@ -41,11 +41,12 @@ if (isset($_SESSION["usuario"])) {
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-10" style="margin-top:3%;">
-                <div class="table-responsive">
+            <div class="table-responsive bg-white shadow-lg rounded p-4">
+            <h2 class="text-center mb-2">Consulta Alumno</h2>
                     <table id="example" class="table table-striped table-hover" style="width:100%">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">Id</th>
+                                <th scope="col">Nº</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Direccion</th>
@@ -79,7 +80,7 @@ if (isset($_SESSION["usuario"])) {
 
                         </tbody>
                         <tfoot class="table-dark">
-                            <th scope="col">Id</th>
+                            <th scope="col">Nº</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">Direccion</th>

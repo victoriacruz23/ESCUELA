@@ -41,7 +41,8 @@ if (isset($_SESSION["usuario"])) {
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-8" style="margin-top:5%;">
-                <div class="table-responsive">
+                <div class="table-responsive bg-white shadow-lg"  style="padding: 20px; border-radius:20px;">
+                <h2 class="text-center mb-2">Consulta Rol</h2>
                     <!-- <left >
                 <p class="text-danger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square-dotted" viewBox="0 0 16 16">
@@ -58,24 +59,25 @@ if (isset($_SESSION["usuario"])) {
                                 d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                         </svg>
                     </a>
-                    <table id="example" class="table table-striped table-hover" style="width:100%">
+                    <table id="example" class="table  table-striped table-hover"  style="width:100%">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">Id</th>
+                                <th scope="col">Nº</th>
                                 <th scope="col">Tipo de Rol</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
-                        <tbody class="table-danger">
+                        <tbody class="table-primary">
                             <?php
                             require_once("../databases/conexion.php");
                             $roles = $conexion->query("SELECT * FROM rol");
+                            $i = 1;
                             if ($roles->num_rows > 0) {
                                 while ($t = $roles->fetch_assoc()) {
                             ?>
                             <tr>
-                                <th scope="row"><?php echo $t["RolId"]; ?></th>
+                                <th scope="row"><?php echo $i++; ?></th>
                                 <td><?php echo $t["RolNombre"]; ?></td>
                                 <div style="justify-content: center;">
                                     <!-- function editarRol(eliminar,usuario){} -->
@@ -102,14 +104,13 @@ if (isset($_SESSION["usuario"])) {
                             } ?>
                         </tbody>
                         <tfoot class="table-dark">
-                            <th scope="col">Id</th>
+                            <th scope="col">Nº</th>
                             <th scope="col">Tipo de Rol</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tfoot>
                     </table>
-                </div>
-                
+                     
                 <div class="mt-4">
                     <center>
                         <!-- inicio -->
@@ -141,6 +142,8 @@ if (isset($_SESSION["usuario"])) {
                         </a>
                     </center>
                 </div>
+                </div>
+               
             </div>
         </div>
     </div>
@@ -160,6 +163,7 @@ if (isset($_SESSION["usuario"])) {
                             <div class="col-sm-12 col-md-12" style="margin-top: 5%;">
                                 <form class="shadow-lg mb-5" style="padding: 20px; border-radius:20px;background-color:#BEF0F8;" action="../databases/RegistrodeRol.php" method="POST">
                                     <div class="mb-3">
+                                         <input type="hidden" name="ruta" value="<?php echo basename(__FILE__); ?>">
                                         <label for="rol" class="form-label">Nombre del Rol</label>
                                         <input type="text" class="form-control" name="rol" id="rol" required>
                                     </div>

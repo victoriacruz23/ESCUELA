@@ -41,11 +41,12 @@ if (isset($_SESSION["usuario"])) {
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-8" style="margin-top:3%;">
-                <div class="table-responsive">
+                <div class="table-responsive bg-white shadow-lg rounded p-4">
+                    <h2 class="text-center mb-2">Consulta Usuario</h2>
                     <table id="example" class="table table-striped table-hover" style="width:100%">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">Id</th>
+                                <th scope="col">Nº</th>
                                 <th scope="col">Tipo de Rol</th>
                                 <th scope="col">Nombre de usuario</th>
 
@@ -54,12 +55,13 @@ if (isset($_SESSION["usuario"])) {
                         <tbody class="table-primary">
                             <?php
                             require_once("../databases/conexion.php");
+                            $i = 1;
                             $usuario = $conexion->query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId");
                             if ($usuario->num_rows > 0) {
                                 while ($cons = $usuario->fetch_assoc()) {
                             ?>
                                     <tr>
-                                        <th scope="row"><?php echo $cons["UsuarioId"]; ?></th>
+                                        <th scope="row"><?php echo $i++; ?></th>
                                         <td><?php echo $cons["RolNombre"]; ?></td>
                                         <td><?php echo $cons["UsuarioNickName"]; ?> </td>
                                     </tr>
@@ -71,7 +73,7 @@ if (isset($_SESSION["usuario"])) {
                             ?>
                         </tbody>
                         <tfoot class="table-dark">
-                            <th scope="col">Id</th>
+                            <th scope="col">Nº</th>
                             <th scope="col">Tipo de Rol</th>
                             <th scope="col">Nombre de usuario</th>
                         </tfoot>

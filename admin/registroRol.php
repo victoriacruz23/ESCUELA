@@ -42,6 +42,7 @@ if (isset($_SESSION["usuario"])) {
                 <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/RegistrodeRol.php" method="POST">
                 <h2 class="text-center mb-2">Registro Rol</h2>   
                 <div class="mb-3">
+                    <input type="hidden" name="ruta" value="<?php echo basename(__FILE__); ?>">
                         <label for="rol" class="form-label">Nombre del Rol</label>
                         <input type="text" class="form-control" name="rol" id="rol" required>
                     </div>

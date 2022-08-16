@@ -41,7 +41,8 @@ if (isset($_SESSION["usuario"])) {
     <div class="container">
         <div class="row" style="justify-content: center;">
             <div class="col-8" style="margin-top:3%;">
-                <div class="table-responsive">
+                <div class="table-responsive bg-white shadow-lg rounded p-4">
+                <h2 class="text-center mb-2">Eliminar Usuario</h2>
                     <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
                             <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
@@ -51,7 +52,7 @@ if (isset($_SESSION["usuario"])) {
                     <table id="example" class="table table-striped table-hover" style="width:100%">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">Id</th>
+                                <th scope="col">Nº</th>
                                 <th scope="col">Tipo de Rol</th>
                                 <th scope="col">Nombre de usuario</th>
                                 <th scope="col">Editar</th>
@@ -59,16 +60,16 @@ if (isset($_SESSION["usuario"])) {
                             </tr>
                         </thead>
 
-                        <tbody class="table-danger">
+                        <tbody class="table-primary">
                             <?php
-
                             require_once("../databases/conexion.php");
                             $usuario = $conexion->query("SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId");
+                            $i = 1;
                             if ($usuario->num_rows > 0) {
                                 while ($cons = $usuario->fetch_assoc()) {
                             ?>
                                     <tr>
-                                        <th scope="row"><?php echo $cons["UsuarioId"]; ?></th>
+                                        <th scope="row"><?php echo $i++; ?></th>
                                         <td><?php echo $cons["RolNombre"]; ?></td>
                                         <td><?php echo $cons["UsuarioNickName"]; ?> </td>
                                         <div style="justify-content: center;">
@@ -92,111 +93,50 @@ if (isset($_SESSION["usuario"])) {
 
                         </tbody>
                         <tfoot class="table-dark">
-                            <th scope="col">Id</th>
+                            <th scope="col">Nº</th>
                             <th scope="col">Tipo de Rol</th>
                             <th scope="col">Nombre de usuario</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tfoot>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-4">
-        <center>
-            <!-- inicio -->
-            <a href="registrodeusuario.php" class="text-decoration-none text-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-skip-start-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM9.71 5.093 7 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407v-5a.5.5 0 0 0-.79-.407z" />
-                </svg>
-            </a>
-            <!-- anterior -->
-            <a href="consultaUsuario.php" class="text-decoration-none text-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16">
-                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12z" />
-                </svg>
-            </a>
-            <!-- Siguiente -->
-            <a href="registrodeusuario.php" class="text-decoration-none text-dark">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
-                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
-                </svg>
-            </a>
-            <!-- final -->
-            <a href="eliminarusuario.php" class="text-decoration-none text-dark">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-skip-end-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z" />
-                </svg>
-            </a>
-        </center>
-    </div>
-
-  <?php
-
-/*
-  <!-- Modal insertar -->
-    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Registro Usuarios</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="../databases/editarUsuario.php" class="shadow-lg mb-5" style="padding: 20px; border-radius:20px;background-color:#BEF0F8;"  method="POST">
-                        <h2 class="text-center mb-2">Registro Usuario</h2>
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label">Nickname</label>
-                            <input type="text" class="form-control" name="usuario" id="usuario" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" name="password" id="password" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="verifica" class="form-label">Verificacion de Contraseña</label>
-                            <input type="password" class="form-control" name="verifica" id="verifica" required>
-
-                        </div>
-                        <div class="mb-3">
-                            <label for="select" class="form-label">Tipos de rol</label>
-                            <select class="form-select" name="select" id="select" aria-label="Default select example" required>
-                                <option selected>Seleccionar un rol</option>
-                                <!-- consulta -->
-                                <?php
-                                require_once("../databases/conexion.php");
-                                $roles1 = $conexion->query("SELECT * FROM rol");
-                                if ($roles1->num_rows > 0) {
-                                    while ($t1 = $roles1->fetch_assoc()) {
-                                ?>
-
-                                        <option value="<?php echo $t1["RolId"] ?>"><?php echo $t1["RolNombre"] ?></option>
-
-                                <?php
-                                    }
-                                }
-                                ?>
-                            </select>
-                        </div>
+                    <div class="mt-4">
                         <center>
+                            <!-- inicio -->
+                            <a href="registrodeusuario.php" class="text-decoration-none text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-skip-start-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM9.71 5.093 7 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407v-5a.5.5 0 0 0-.79-.407z" />
+                                </svg>
+                            </a>
+                            <!-- anterior -->
+                            <a href="consultaUsuario.php" class="text-decoration-none text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12z" />
+                                </svg>
+                            </a>
+                            <!-- Siguiente -->
+                            <a href="registrodeusuario.php" class="text-decoration-none text-dark">
 
-                            <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
-                            <a data-bs-dismiss="modal" style="margin-left: 5%" class="btn btn-success">Cancelar</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
+                                </svg>
+                            </a>
+                            <!-- final -->
+                            <a href="eliminarusuario.php" class="text-decoration-none text-dark">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-skip-end-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z" />
+                                </svg>
+                            </a>
                         </center>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-*/
-?>
-   
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -218,7 +158,63 @@ if (isset($_SESSION["usuario"])) {
                                 <option value="0">Seleccionar un rol</option>
                                 <!-- consulta -->
                                 <?php
-                                require_once("../databases/conexion.php");
+                                $roles1 = $conexion->query("SELECT * FROM rol");
+                                if ($roles1->num_rows > 0) {
+                                    while ($t1 = $roles1->fetch_assoc()) {
+                                ?>
+
+                                        <option value="<?php echo $t1["RolId"] ?>"><?php echo $t1["RolNombre"] ?></option>
+
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <center>
+
+                            <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
+                            <a style="margin-left: 5%" class="btn btn-warning text-white" data-bs-dismiss="modal">Cancelar</a>
+                        </center>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Insertar Usuarios</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="shadow-lg mb-5" style="padding: 20px; border-radius:20px;background-color:#BEF0F8;" action="../databases/RegistroUsuario.php" method="POST">
+                        <h2 class="text-center mb-2">Registro Usuario</h2>
+                        <div class="mb-3">
+                         <input type="hidden" name="ruta" value="<?php echo basename(__FILE__); ?>">
+                            <label for="usuario" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" name="usuario" id="usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" name="password" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="verifica" class="form-label">Verificacion de Contraseña</label>
+                            <input type="password" class="form-control" name="verifica" id="verifica" required>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="select" class="form-label">Tipos de rol <span id="rolspan"></span></label>
+                            <select class="form-select" name="select" id="select" aria-label="Default select example" required>
+                                <option value="0">Seleccionar un rol</option>
+                                <!-- consulta -->
+                                <?php
                                 $roles = $conexion->query("SELECT * FROM rol");
                                 if ($roles->num_rows > 0) {
                                     while ($t = $roles->fetch_assoc()) {

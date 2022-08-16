@@ -41,6 +41,7 @@ if (isset($_SESSION["usuario"])) {
             <div class="col-sm-6 col-md-6" style="margin-top:5%;">
                 <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/RegistroAlumno.php" method="POST">
                     <h2 class="text-center mb-2">Registro de alumnos</h2>   
+                    <input type="hidden" name="ruta" value="<?php echo basename(__FILE__); ?>">
                     <div class="mb-3">
                         <label for="alumno" class="form-label">Nombre del alumno</label>
                         <input type="text" class="form-control border border-primary text-capitalize" name="alumno" id="alumno" placeholder="Nombre del alumno" required>
@@ -106,7 +107,6 @@ if (isset($_SESSION["usuario"])) {
                         </center>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

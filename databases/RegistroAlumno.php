@@ -9,6 +9,7 @@ $Fecha = $_POST["Fecha"];
 $Codigo = $_POST["Codigo"];
 $Telefono = $_POST["Telefono"];
 $Dni = $_POST["Dni"];
+$ruta = $_POST["ruta"];
 
 //exit;
 
@@ -17,7 +18,7 @@ if($busca->num_rows > 0){
     echo "
     <script> 
     alert('El alumno ya existe');
-    window.location = '../admin/registroalumno.php';
+    window.location = '../admin/$ruta';
     </script>";
     exit;
     }else{
@@ -27,14 +28,14 @@ if($busca->num_rows > 0){
            echo "
            <script>
            alert('El alumno se registro correctamente');
-           window.location = '../admin/registroalumno.php';
+           window.location = '../admin/$ruta';
            </script>
            ";
            }else{
                echo "
                <script>
                alert('Error al registrar alumno');
-               window.location = '../admin/registroalumno.php';
+               window.location = '../admin/$ruta';
                </script>
                ";
            }
