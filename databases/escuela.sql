@@ -11,6 +11,12 @@ CREATE TABLE usuario(
     UsuarioPassword varchar(80) NOT NULL,
     FOREIGN KEY rol (UsuarioRolId) REFERENCES rol (RolId)
 );
+CREATE TABLE persona(
+    PersonaId INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre char(20) NOT NULL,
+    ApellidoP char(25) NOT NULL,
+    ApellidoM char(25) NOT NULL
+);
 
 -- SELECT * FROM usuario INNER JOIN rol ON usuario.UsuarioRolId = rol.RolId; 
 
