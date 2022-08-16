@@ -198,26 +198,39 @@ if (isset($_SESSION["usuario"])) {
 ?>
    
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="#staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Editar Usuarios</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Registro Usuario</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="shadow-lg mb-5" style="padding: 20px; border-radius:20px;background-color:#BEF0F8;" action="../databases/editarUsuario.php" method="POST">
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label">Nickname</label>
-                            <input type="text" class="form-control" name="usuario" id="usuario" required>
-                        </div>
-                        <input type="hidden" name="iduseredit" id="iduseredit">
-                        <div class="mb-3">
-                            <label for="select" class="form-label">Tipos de rol <span id="rolspan"></span></label>
-                            <select class="form-select" name="select" id="select" aria-label="Default select example" required>
-                                <option value="0">Seleccionar un rol</option>
-                                <!-- consulta -->
-                                <?php
+                    <div class="container">
+                        <div class="row" style="justify-content: center;">
+                            <div class="col-sm-12 col-md-12" style="margin-top: 5%;">
+                                <form class="shadow-lg mb-5" style="padding: 20px; border-radius:20px;background-color:#BEF0F8;" action="../databases/RegistrodeRol.php" method="POST">
+                                <div class="mb-3">
+                        <label for="usuario" class="form-label">Nickname</label>
+                        <input type="text" class="form-control" name="usuario" id="usuario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="verifica" class="form-label">Verificacion de Contraseña</label>
+                        <input type="password" class="form-control" name="verifica" id="verifica" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="select" class="form-label">Tipos de rol</label>
+                        <select class="form-select" name="select" id="select" aria-label="Default select example" required>
+                            <option selected>Seleccionar un rol</option>
+                                    
+                                 <!-- consulta -->
+                                 <?php
                                 require_once("../databases/conexion.php");
                                 $roles = $conexion->query("SELECT * FROM rol");
                                 if ($roles->num_rows > 0) {
@@ -238,9 +251,12 @@ if (isset($_SESSION["usuario"])) {
                             <a style="margin-left: 5%" class="btn btn-warning text-white" data-bs-dismiss="modal">Cancelar</a>
                         </center>
                     </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

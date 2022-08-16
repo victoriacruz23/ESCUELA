@@ -43,35 +43,35 @@ if (isset($_SESSION["usuario"])) {
                     <h2 class="text-center mb-2">Registro de alumnos</h2>   
                     <div class="mb-3">
                         <label for="alumno" class="form-label">Nombre del alumno</label>
-                        <input type="text" class="form-control border border-primary text-capitalize" name="alumno" id="alumno" placeholder="Nombre del alumno" required>
+                        <input type="text" class="form-control border border-primary text-capitalize" name="alumno" id="alumno" placeholder="Victoria" required>
                     </div>
                     <div class="mb-3">
                         <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control border border-primary text-capitalize" style=" border-color: rgb(120, 128, 214);" name="apellidos" id="apellidos" placeholder="hola" required>
+                        <input type="text" class="form-control border border-primary text-capitalize" style=" border-color: rgb(120, 128, 214);" name="apellidos" id="apellidos" placeholder="Cruz" required>
                     </div>
                     <div class="mb-3">
                         <label for="direccion" class="form-label"> Direccion</label>
-                        <input type="text" class="form-control border border-primary" name="direccion" id="direccion" placeholder="hola" required>
+                        <input type="text" class="form-control border border-primary" name="direccion" id="direccion" placeholder="And. Acatlan" required>
                     </div>
                     <div class="mb-3">
                         <label for="Poblacion" class="form-label">Poblacion</label>
-                        <input type="text" class="form-control border border-primary" name="Poblacion" id="Poblacion" placeholder="hola" required>
+                        <input type="text" class="form-control border border-primary" name="Poblacion" id="Poblacion" placeholder="Guerrero" required>
                     </div>
                     <div class="mb-3">
                         <label for="Fecha" class="form-label">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control border border-primary" name="Fecha" id="Fecha" placeholder="hola" required>
+                        <input type="date" class="form-control border border-primary" name="Fecha" id="Fecha" placeholder="11/02/2022" required>
                     </div>
                     <div class="mb-3">
                         <label for="Codigo" class="form-label">Codigo Postal</label>
-                        <input type="number" class="form-control border border-primary" name="Codigo" id="Codigo" placeholder="hola" required>
+                        <input type="number" class="form-control border border-primary" name="Codigo" id="Codigo" placeholder="39715" required>
                     </div>
                     <div class="mb-3">
                         <label for="Telefono" class="form-label">Telefono</label>
-                        <input type="number" class="form-control border border-primary" name="Telefono" id="Telefono" placeholder="hola" required>
+                        <input type="number" class="form-control border border-primary" name="Telefono" id="Telefono" placeholder="7444012485" required>
                     </div>
                     <div class="mb-3">
                         <label for="Dni" class="form-label">Curp</label>
-                        <input type="text" class="form-control border border-primary" style=" border-color: rgb(120, 128, 214);" name="Dni" id="Dni" placeholder="hola" required onkeyup="this.value=this.value.toUpperCase()">
+                        <input type="text" class="form-control border border-primary" style=" border-color: rgb(120, 128, 214);" name="Dni" id="Dni" required onkeyup="this.value=this.value.toUpperCase()">
                     </div>
                     <center>
                         <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>

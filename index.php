@@ -49,10 +49,11 @@
                 </form>
                 <!-- crear cuenta -->
                 <a href="RegistroUser.php">Registarme</a>
-            </div>
-            <p class="text-center text-gray mt-3 mx-4">
-                &copy;2022 Escuela UTA. cme Corp. Derechos reservados.
+                <p class="text-center text-gray mt-3 mx-4">
+                &copy;2022 Escuela UTA. Corp. Derechos reservados.
             </p>
+            </div>
+            
         </div>
     </div>
     <!-- scripts  -->
