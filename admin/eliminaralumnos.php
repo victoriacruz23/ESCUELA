@@ -206,9 +206,9 @@ if (isset($_SESSION["usuario"])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/RegistroAlumno.php" method="POST">
+                    <form class="shadow-lg bg-white mb-5" style="padding: 20px; border-radius:20px;" action="../databases/editarAlmno.php" method="POST">
                         <div class="mb-3">
-                            <input type="hidden" name="ruta" value="<?php echo basename(__FILE__); ?>">
+                            <input type="hidden" name="idalum" id="idalum">
                             <label for="alumno1" class="form-label">Nombre del alumno</label>
                             <input type="text" class="form-control border border-primary text-capitalize" name="alumno1" id="alumno1" placeholder="Nombre del alumno" required>
                         </div>
@@ -241,7 +241,7 @@ if (isset($_SESSION["usuario"])) {
                             <input type="text" class="form-control border border-primary" style=" border-color: rgb(120, 128, 214);" name="Dni1" id="Dni1" placeholder="hola" required onkeyup="this.value=this.value.toUpperCase()">
                         </div>
                         <center>
-                            <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Registrar</button>
+                            <button type="submit" style="margin-right: 5%;" class="btn btn-primary">Editar</button>
                         </center>
 
                     </form>
@@ -305,9 +305,21 @@ if (isset($_SESSION["usuario"])) {
             }).then((result) => {
                 if (result.isConfirmed) {
                     // window.location.href = "../databases/editarAlumnos.php?eliminar=" + eliminar
+                    fetch("../databases/solicitu.php",{
+                        method: "POST",
+                        body: eliminar
+                    }).then(response => response.json()).then(response=>{
+                        document.getElementById('idalum').value = response.eliminar;
+                        document.getElementById('alumno1').value = response.Nombre;
+                        document.getElementById('apellidos1').value = response.Apellido;
+                        document.getElementById('direccion1').value = response.Direccion;
+                        document.getElementById('Poblacion1').value = response.Poblacion;
+                        document.getElementById('Fecha1').value = response.F_Nacimiento;
+                        document.getElementById('Codigo1').value = response.Cod_Postal;
+                        document.getElementById('Telefono1').value = response.Telefono;
+                        document.getElementById('Dni1').value = response.Dni;
+                    });
                     btnModalEdit.show();
-                    document.getElementById('alumno1').value = usuario;
-                    document.getElementById('alumno1').value = usuario;
                     // console.log(eliminar);
                 }
             })
